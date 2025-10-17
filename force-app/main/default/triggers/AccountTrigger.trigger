@@ -3,7 +3,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert) {
     // Example 1: Before Insert or Update → Mark High-Value Accounts
     if (Trigger.isBefore) {
         for (Account acc : Trigger.new) {
-            
+
             // Example condition: if Annual Revenue > 5 Million
             if (acc.AnnualRevenue != null && acc.AnnualRevenue > 5000000) {
                 acc.Description = 'High-Value Account';
